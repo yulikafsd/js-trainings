@@ -572,8 +572,8 @@
 //     { name: 'Mango', age: 12, city: 'LA', online: true },
 //     { name: 'Kiwi', age: 100, city: 'DN', online: false },
 //     { name: 'Poly', age: 35, city: 'NY', online: false },
-//     { name: 'Ajax', age: 21, city: 'TA', online: true}
-// ]
+//     { name: 'Ajax', age: 21, city: 'TA', online: true }
+// ];
 
 // 1. Найти друга по имени
 // const findFriendByName = function (allFriends, friendName) {
@@ -598,6 +598,10 @@
 // }
 // console.log(getAllNames(friends));
 
+// // и с помощью метода перебора массивов
+// const getAllNames = allFriends => allFriends.map(friend => friend.name);
+// console.log(getAllNames(friends));
+
 
 // 3. Получить имена друзей, которые оффлайн
 // const getOfflineNames = function (allFriends) {
@@ -611,25 +615,35 @@
 // }
 // console.log(getOfflineNames(friends));
 
+// // и с помощью метода перебора массивов
+// const friendsOffline = friends.filter(friend => !friend.online).map(friend => friend.name);
+// console.log(friendsOffline);
+
 
 // 4. Получить имена друзей онлайн и офлайн отдельно
 // const getFriendsByStatus = function (allFriends) {
-//     const friendsByStatus = {
-//         online: [],
-//         offline: [],
-//     };
-//     for (const friend of allFriends) {
-//         !friend.online ? friendsByStatus.offline.push(friend.name) : friendsByStatus.online.push(friend.name);
-//         // или
-//         // const key = friend.online ? 'online' : 'offline';
-//         // friendByStatus[key].push(friend);
-//     }
-//         return friendsByStatus;
-//     }
-// console.log(getFriendsByStatus(friends));
+    //     const friendsByStatus = {
+        //         online: [],
+        //         offline: [],
+        //     };
+        //     for (const friend of allFriends) {
+            //         !friend.online ? friendsByStatus.offline.push(friend.name) : friendsByStatus.online.push(friend.name);
+            //         // или
+            //         // const key = friend.online ? 'online' : 'offline';
+            //         // friendByStatus[key].push(friend);
+            //     }
+            //         return friendsByStatus;
+            //     }
+            // console.log(getFriendsByStatus(friends));
+            
+// // и с помощью метода перебора массивов
+// const friendsOnline = friends.filter(friend => friend.online);
+// console.log(friendsOnline);
+// const friendsOffline = friends.filter(friend => !friend.online);
+// console.log(friendsOffline);
 
-
-// Создать корзину товаров
+            
+            // Создать корзину товаров
 // const cart = {
 //     items: [],
 //     getItems() {
@@ -903,15 +917,15 @@
 // ------------------------------------------
 // Перебирающие методы массивов
 
-const LOW_SCORE = 50;
-const HIGH_SCORE = 80;
-const students = [
-    { name: "Манго", courses: ["українська", "математика", "фізика"], score: 83, },
-    { name: "Аякс", courses: ["українська", "математика", "інформатика"], score: 37 },
-    { name: "Полі", courses: ["українська", "інформатика", "фізика"], score: 59, },
-    { name: "Ківі", courses: ["українська", "фізика", "біологія"], score: 94, },
-    { name: "Х'юстон", courses: ["українська", "математика", "біологія"], score: 64 },
-];
+// const LOW_SCORE = 50;
+// const HIGH_SCORE = 80;
+// const students = [
+//     { name: "Манго", courses: ["українська", "математика", "фізика"], score: 83, },
+//     { name: "Аякс", courses: ["українська", "математика", "інформатика"], score: 37 },
+//     { name: "Полі", courses: ["українська", "інформатика", "фізика"], score: 59, },
+//     { name: "Ківі", courses: ["українська", "фізика", "біологія"], score: 94, },
+//     { name: "Хьюстон", courses: ["українська", "математика", "біологія"], score: 64 },
+// ];
 
 // const studentsCourses = students.forEach(student => console.log(student.courses));
 // console.log(studentsCourses);
@@ -956,41 +970,57 @@ const students = [
 // const averageScore = students.reduce((total, student) => { return total + student.score }, 0) / students.length;
 // console.log(averageScore);
 
-const tweets = [
-  { id: "000", likes: 5, tags: ["js", "nodejs"] },
-  { id: "001", likes: 2, tags: ["html", "css"] },
-  { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
-  { id: "003", likes: 8, tags: ["css", "react"] },
-  { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
-];
+// // Отсортировать студентов по высшему, низшему баллу и по именам
+// const ascendingScore = students.sort((firstStudent, secondStudent) => firstStudent.score - secondStudent.score);
+// console.table(ascendingScore);
+// const descendingScore = students.sort((firstStudent, secondStudent) => secondStudent.score - firstStudent.score);
+// console.table(descendingScore);
+// const studentsSortedByName = students.sort((firstStudent, secondStudent) => firstStudent.name.localeCompare(secondStudent.name));
+// console.table(studentsSortedByName);
 
-const getTags = tweets =>
-  tweets.reduce((allTags, tweet) => {
-    allTags.push(...tweet.tags);
+// // Получить массив имен, отсортированный по возрастанию баллов
+// const namesByScore = [...students]
+//     .sort((firstStudent, secondStudent) => firstStudent.score - secondStudent.score)
+//     .map(student => student.name);
+// console.log(namesByScore);
 
-    return allTags;
-  }, []);
+// // Получить массив уникальных предметов по алфавиту
+// const coursesByAscending = students.flatMap(student => student.courses)
+//     .filter((course, index, array) => array.indexOf(course) === index)
+//     .sort((a, b) => a.localeCompare(b));
+// console.table(coursesByAscending);
 
-const tags = getTags(tweets);
+// Посчитать общее количество тегов всех твитов
+// const tweets = [
+//   { id: "000", likes: 5, tags: ["js", "nodejs"] },
+//   { id: "001", likes: 2, tags: ["html", "css"] },
+//   { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+//   { id: "003", likes: 8, tags: ["css", "react"] },
+//   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+// ];
+// const getTags = tweets =>
+//   tweets.reduce(function (allTags, tweet) {
+//     allTags.push(...tweet.tags);
+//     return allTags;
+//   }, []);
+// const tags = getTags(tweets);
+// console.log(tags);
+// // Винесемо callback-функцію окремо, а в reducе передамо посилання на неї.
+// // Це стандартна практика, якщо callback-функція досить велика.
+// // Якщо в об'єкті-акумуляторі acc відсутня своя властивість з ключем tag,
+// // то створюємо її і записуємо їй значення 0.
+// // В іншому випадку збільшуємо значення на 1.
+// const getTagStats = (acc, tag) => {
+//   if (!acc.hasOwnProperty(tag)) {
+//     acc[tag] = 0;
+//     // console.log(acc);
+//   }
+//   acc[tag] += 1;
+//   // console.log(acc);
+//   return acc;
+// };
+// // Початкове значення акумулятора - це порожній об'єкт {}
+// const countTags = tags => tags.reduce(getTagStats, {});
+// const tagCount = countTags(tags);
+// console.log(tagCount);
 
-// Винесемо callback-функцію окремо, а в reducе передамо посилання на неї.
-// Це стандартна практика, якщо callback-функція досить велика.
-
-// Якщо в об'єкті-акумуляторі acc відсутня своя властивість з ключем tag,
-// то створюємо її і записуємо їй значення 0.
-// В іншому випадку збільшуємо значення на 1.
-const getTagStats = (acc, tag) => {
-  if (!acc.hasOwnProperty(tag)) {
-    acc[tag] = 0;
-  }
-
-  acc[tag] += 1;
-
-  return acc;
-};
-
-// Початкове значення акумулятора - це порожній об'єкт {}
-const countTags = tags => tags.reduce(getTagStats, {});
-
-const tagCount = countTags(tags);
-console.log(tagCount);
