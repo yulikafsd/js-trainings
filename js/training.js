@@ -827,6 +827,7 @@
 //     return id;
 // }
 
+
 // Задача. Вернуть объект контакта со свойством полное имя:
 // function transformName({ firstName, lastName, ...props }) {
 //     return {
@@ -865,11 +866,8 @@
 //     }
 //      return `Potion ${potionName} is not in inventory!`;
 //   },
-
 //   updatePotionName(oldName, newName) {
-
 //     for (let potion of this.potions) {
-
 //       if (potion.name === oldName) {
 //         potion.name = newName;
 //       }
@@ -887,6 +885,20 @@
 // console.log(atTheOldToad.removePotion('Speed potion'));
 // console.log(atTheOldToad.updatePotionName('Dragon breath', 'Polymorth'));
 // console.log(atTheOldToad.updatePotionName('Stone skin', 'Invulnerability potion'));
+
+// Посчитать зарплату всех работников из объекта
+// function countTotalSalary(salaries) {
+//   let totalSalary = 0;
+//   // Change code below this line
+//   const keys = Object.keys(salaries);
+//   for (let key of keys) {
+//     console.log(salaries[key]);
+//   }
+//   // Change code above this line
+//   return totalSalary;
+// }
+// countTotalSalary({ mango: 100, poly: 150, alfred: 80 });
+
 
 // ------------------------------------------
 // Перебирающие методы массивов
@@ -982,289 +994,3 @@ const countTags = tags => tags.reduce(getTagStats, {});
 
 const tagCount = countTags(tags);
 console.log(tagCount);
-
-// function calculateTotalPrice(orderedItems) {
-//   let totalPrice = 0;
-//   // Change code below this line
-
-//   orderedItems.forEach(function (item) {
-//     totalPrice += item;
-    
-//   });
-
-//   // Change code above this line
-//   return totalPrice;
-// }
-
-// console.log(calculateTotalPrice([12, 85, 37, 4]));
-// console.log(calculateTotalPrice([164, 48, 291]));
-// console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
-// console.log(calculateTotalPrice([14, 7, 21, 21, 10, 24, 23, 6, 16, 11, 12, 21, 23, 19]));
-
-// Найти число в массиве:
-
-// function filterArray(numbers, value) {
-//   const filteredNumbers = [];
-//   // Change code below this line
-
-//   numbers.forEach((number) => {
-//     if (number > value) {
-//       filteredNumbers.push(number);
-//     };
-//   });
-
-//   // Change code above this line
-//   return filteredNumbers;
-// }
-
-// console.log(filterArray([1, 2, 3, 4, 5], 3));
-
-
-// function changeEven(numbers, value) {
-//   // Change code below this line
-//   const newArray = [];
-
-//   numbers.forEach(number => {
-//     if (number % 2 === 0) {
-//       number = number + value;
-//     }
-//       newArray.push(number);
-//   });
-
-//   return newArray;
-//   // Change code above this line
-// }
-
-// console.log(changeEven([1, 2, 3, 4, 5], 10));
-
-// const users = [
-//   {
-//     name: "Moore Hensley",
-//     email: "moorehensley@indexia.com",
-//     eyeColor: "blue",
-//     friends: ["Sharron Pace"],
-//     isActive: false,
-//     balance: 2811,
-//     skills: ["ipsum", "lorem"],
-//     gender: "male",
-//     age: 37,
-//   },
-//   {
-//     name: "Sharlene Bush",
-//     email: "sharlenebush@tubesys.com",
-//     eyeColor: "blue",
-//     friends: ["Briana Decker", "Sharron Pace"],
-//     isActive: true,
-//     balance: 3821,
-//     skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
-//     gender: "female",
-//     age: 34,
-//   },
-//   {
-//     name: "Ross Vazquez",
-//     email: "rossvazquez@xinware.com",
-//     eyeColor: "green",
-//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-//     isActive: false,
-//     balance: 3793,
-//     skills: ["nulla", "anim", "proident", "ipsum", "elit"],
-//     gender: "male",
-//     age: 24,
-//   },
-//   {
-//     name: "Elma Head",
-//     email: "elmahead@omatom.com",
-//     eyeColor: "green",
-//     friends: ["Goldie Gentry", "Aisha Tran"],
-//     isActive: true,
-//     balance: 2278,
-//     skills: ["adipisicing", "irure", "velit"],
-//     gender: "female",
-//     age: 21,
-//   },
-//   {
-//     name: "Carey Barr",
-//     email: "careybarr@nurali.com",
-//     eyeColor: "blue",
-//     friends: ["Jordan Sampson", "Eddie Strong"],
-//     isActive: true,
-//     balance: 3951,
-//     skills: ["ex", "culpa", "nostrud"],
-//     gender: "male",
-//     age: 27,
-//   },
-//   {
-//     name: "Blackburn Dotson",
-//     email: "blackburndotson@furnigeer.com",
-//     eyeColor: "brown",
-//     friends: ["Jacklyn Lucas", "Linda Chapman"],
-//     isActive: false,
-//     balance: 1498,
-//     skills: ["non", "amet", "ipsum"],
-//     gender: "male",
-//     age: 38,
-//   },
-//   {
-//     name: "Sheree Anthony",
-//     email: "shereeanthony@kog.com",
-//     eyeColor: "brown",
-//     friends: ["Goldie Gentry", "Briana Decker"],
-//     isActive: true,
-//     balance: 2764,
-//     skills: ["lorem", "veniam", "culpa"],
-//     gender: "female",
-//     age: 39,
-//   },
-// ];
-
-// const getTotalBalanceByGender = (users, gender) => {
-//   const totalBalance = [...users]
-//     .filter(user => user.gender === gender)
-//     .reduce((previousBalance, user) => { return previousBalance + user.balance }, 0);
-//   return totalBalance;
-// };
-
-// console.log(getTotalBalanceByGender(users, "male"));
-
-// const getUserNames = users => {
-//   users.map(users.name);
-// };
-  
-// console.log(getUserNames(users));
-
-// const getUsersWithEyeColor = (users, color) => {
-//  const filteredByColor = users.filter(user => user.eyeColor === color);
-//  return filteredByColor;
-// };
-// console.log(getUsersWithEyeColor(users, "brown"));
-
-// const getUsersWithAge = (users, minAge, maxAge) => {
-//  const filteredByAge = users.filter(user => user.age > minAge && user.age < maxAge);
-//  return filteredByAge;
-// };
-
-// console.log(getUsersWithAge(users, 30, 40));
-
-// const getUsersWithFriend = (users, friendName) => {
-//   const filteredByFriend = users.filter(({friends}) => friends.includes(friendName));
-//   return filteredByFriend;
-// };
-
-// console.log(getUsersWithFriend(users, "Sharron Pace"));
-
-// const getFriends = (users) => {
-//   const allFriends = users.flatMap(user => user.friends);
-//   const uniqueFriends = allFriends.filter(
-//   (friend, index, allFriends) => allFriends.indexOf(friend) === index
-// );
-//   return uniqueFriends;
-// };
-
-// console.log(getFriends(users));
-
-// const getActiveUsers = (users) => {
-   
-// };
-
-// console.log(getActiveUsers(users));
-
-// class Storage {
-//     constructor (items) {
-//         this.items = items;
-//     }
-//     getItems() {
-//         return this.items;
-//     }
-//     addItem(newItem) {
-//         return this.items.push(newItem);
-//     }
-//     removeItem(itemToRemove) {
-//       this.items = this.items.filter(item => item !== itemToRemove);
-//     }
-
-// }
-
-
-// // Change code above this line
-// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
-// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
-// storage.addItem("Droid");
-// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
-// storage.removeItem("Prolonger");
-// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
-
-
-// class StringBuilder {
-//     constructor(initialValue) {
-//         this.value = initialValue;
-//     }
-
-//     getValue() {
-//         return this.value;
-//     }
-    
-//     padEnd(str) {
-//         return this.value += str;
-//     }
-    
-//     padStart(str) {
-//         return this.value = str + this.value;
-//     }
-    
-//     padBoth(str) {
-//         return this.value = str + this.value + str;
-//     }
-// }
-
-
-// // Change code above this line
-// const builder = new StringBuilder(".");
-// console.log(builder.getValue()); // "."
-// builder.padStart("^");
-// console.log(builder.getValue()); // "^."
-// builder.padEnd("^");
-// console.log(builder.getValue()); // "^.^"
-// builder.padBoth("=");
-// console.log(builder.getValue()); // "=^.^="
-
-// class User {
-//   eamil;
-
-//   constructor(email) {
-//     this.email = email;
-//   }
-
-//   get email() {
-//     return this.email;
-//   }
-
-//   set email(newEmail) {
-//     this.email = newEmail;
-//   }
-// }
-
-// class Admin extends User {
-//   // Change code below this line
-
-//   static AccessLevel = {
-//     BASIC: "basic",
-//     SUPERUSER: "superuser",
-//   };
-
-//     constructor ({email, accessLevel}) {
-//     super(email);
-//     this.accessLevel = accessLevel;
-//   }
-
-//   // Change code above this line
-// }
-
-// const mango = new Admin({
-//   email: "mango@mail.com",
-//   accessLevel: Admin.AccessLevel.SUPERUSER,
-// });
-
-// console.log(mango.email); // "mango@mail.com"
-// console.log(mango.accessLevel); // "superuser"
-
-// 
