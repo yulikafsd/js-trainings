@@ -566,7 +566,7 @@
 //     totalFeeds += value;
 // }
 // console.log(totalFeeds);
-
+  
 // Следующие 4 задачи для работы с этим массивом
 // const friends = [
 //     { name: 'Mango', age: 12, city: 'LA', online: true },
@@ -919,13 +919,13 @@
 
 // const LOW_SCORE = 50;
 // const HIGH_SCORE = 80;
-// const students = [
-//     { name: "Манго", courses: ["українська", "математика", "фізика"], score: 83, },
-//     { name: "Аякс", courses: ["українська", "математика", "інформатика"], score: 37 },
-//     { name: "Полі", courses: ["українська", "інформатика", "фізика"], score: 59, },
-//     { name: "Ківі", courses: ["українська", "фізика", "біологія"], score: 94, },
-//     { name: "Хьюстон", courses: ["українська", "математика", "біологія"], score: 64 },
-// ];
+const students = [
+    { name: "Манго", courses: ["українська", "математика", "фізика"], score: 83, },
+    { name: "Аякс", courses: ["українська", "математика", "інформатика"], score: 37 },
+    { name: "Полі", courses: ["українська", "інформатика", "фізика"], score: 59, },
+    { name: "Ківі", courses: ["українська", "фізика", "біологія"], score: 94, },
+    { name: "Хьюстон", courses: ["українська", "математика", "біологія"], score: 64 },
+];
 
 // const studentsCourses = students.forEach(student => console.log(student.courses));
 // console.log(studentsCourses);
@@ -1023,4 +1023,91 @@
 // const countTags = tags => tags.reduce(getTagStats, {});
 // const tagCount = countTags(tags);
 // console.log(tagCount);
+
+// --------------------------------------------
+// КОЛЛБЭКИ
+
+// // написать универсальный код вычисления суммы или разницы
+// const doMath = function (a, b, callback) {
+//     const result = callback(a, b);
+//     console.log(result);
+// };
+// const add = function (x, y) {
+//     return x + y;
+// };
+// const sub = function (x, y) {
+//     return x - y;
+// };
+// doMath(3, 5, add);
+// doMath(13, 8, sub);
+
+// // Н аписать универсальный код фильтрации массива
+// const filter = function (arr, testNumber, test) {
+//     const filteredArr = [];
+//     for (const el of arr) {
+//         if (test(testNumber, el)) {
+//             filteredArr.push(el);
+//         };
+//     };
+//     return filteredArr;
+// };
+// const moreThanNumber = function (testNumber, value) {
+//     return value >= testNumber;
+// };
+// const lessThanNumber = function (testNumber, value) {
+//     return value < testNumber;
+// };
+// const moreThanScore = function (testNumber, element) {
+//     return element.score >= testNumber;
+// };
+// console.log(filter([1, 2, 3, 4, 5, 6, 7, 8], 3, moreThanNumber));
+// console.log(filter([1, 2, 3, 4, 5, 6, 7, 8], 5, lessThanNumber));
+// console.log(filter([1, 2, 3, 4, 5, 6, 7, 8], 2, (value, testNumber) => value%testNumber === 0; ));
+
+// Отфильтровать студентов, чей балл больше 30
+// console.log(filter(students, 60, moreThanScore));
+
+
+// //Замыкание - функция со статичным параметром
+// возвращает функцию с меняющимся свойством, которая
+// имеет доступ к параметрам и переменным первой функции
+// const makeShef = function (name) {
+//     const makeDish = function (dish) {
+//         console.log(`Chef ${name} cooks ${dish}`);
+//     };
+//     return makeDish;
+// };
+// const mango = makeShef('Mango');
+// const poly = makeShef('Poly');
+// mango('pancakes');
+// poly('steak');
+
+// При замыкании переменную первой функции 
+// можно изменить только с помощью методов
+// const salaryManager = function (name, baseSalary = 0) {
+//     let salary = baseSalary;
+//     return {
+//         raise(amount) {
+//             if (amount > 1000) {
+//                 return `Are you mad?!`;
+//             }
+//             salary += amount;
+//         },
+//         lower(amount) {
+//             // if (amount < baseSalary) {
+//             //     return `It's too much`;
+//             // }
+//             salary -= amount;
+//         },
+//         current() {
+//             return `Current salary of ${name} is ${salary}`;
+//         },
+//     };
+// }
+// const bob = salaryManager('Bob', 5000);
+// console.log(bob.current());
+// bob.lower(50);
+// console.log(bob.current());
+// bob.raise(1000);
+// console.log(bob.current());
 
