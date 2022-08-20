@@ -549,6 +549,26 @@
 // ---------------------------------------------------
 // ОБЪЕКТЫ
 
+// const stud = {
+//     name: 'Julia',
+//     age: 35,
+//     location: {
+//         city: 'NY',
+//     }
+// };
+// const key1 = 'name';
+// const key2 = 'age';
+// console.log(stud.name); // нашли значение св-ва с названием нейм
+// console.log(stud['name']); // нашли значение св-ва с названием нейм
+// console.log(stud[key1]); // нашли значение св-ва с названием, хранящимся в переменной кей1
+// stud.age = 10; // изменили значение свойства
+// stud['age'] = 15; // изменили значение свойства
+// stud.sex = 'female'; // добавили свойство со значением
+// console.log(stud?.location?.city); //проверяет, есть ли вложенное свойство,выводит если есть
+// console.log(stud?.location?.street); //проверяет, есть ли вложенное свойство, выводит андефайнд если нет (вместо ошибки)
+// console.log(stud.course.lang); // course undefined, на нем lang ошибка
+// console.log(stud);
+
 // Посчитать количество фидбеков
 // const feedback = {
 //     good: 5,
@@ -566,7 +586,7 @@
 //     totalFeeds += value;
 // }
 // console.log(totalFeeds);
-  
+
 // Следующие 4 задачи для работы с этим массивом
 // const friends = [
 //     { name: 'Mango', age: 12, city: 'LA', online: true },
@@ -721,10 +741,14 @@
 // console.log(cart.remove('banana'));
 // console.log(cart.clear());
 
+
+// Создать банкомат
 // const Transaction = {
 //     DEPOSIT: 'deposit',
 //     WITHDRAW: 'withdraw',
+//     LIMIT: 10000,
 // }
+
 // const account = {
 //     balance: 0,
 //     transactions: [],
@@ -735,20 +759,44 @@
 //             id: this.transactions.length,
 //         }
 //     },
-//     deposit(amount) {
+//     // deposit(amount) {
+//     //     this.balance += amount;
+//     //     const transaction = this.createTransaction(amount, Transaction.DEPOSIT);
+//     //     this.transactions.push(transaction);
+//     //     return `Account deposited for ${amount} euro, your balance is ${this.balance}`;
+//     // },
+//     // withdraw(amount) {
+//     //     if (this.balance < amount) {
+//     //         return `You don't have enough funds!`
+//     //     }
+//     //     this.balance -= amount;
+//     //     const transaction = this.createTransaction(amount, Transaction.WITHDRAW);
+//     //     this.transactions.push(transaction);
+//     //     return `${amount} euro withdrawed, your balance is ${this.balance}`;
+//     // },
+//     deposit(amount, onSuccess, onError) {
+//         if (amount > Transaction.LIMIT) {
+//             return onError(`Вы превысили лимит ${Transaction.LIMIT}`);
+//         }
+//         if (amount <= 0) {
+//             return onError(`Вы ввели сумму меньше 0`);
+//         }
 //         this.balance += amount;
 //         const transaction = this.createTransaction(amount, Transaction.DEPOSIT);
 //         this.transactions.push(transaction);
-//         return `Account deposited for ${amount} euro, your balance is ${this.balance}`;
+//         return onSuccess(`Вы положили ${amount} евро на ваш счет, теперь ваш баланс ${this.balance}`);
 //     },
-//     withdraw(amount) {
-//         if (this.balance < amount) {
-//             return `You don't have enough funds!`
+//     withdraw(amount, onSuccess, onError) {
+//         if (amount > Transaction.LIMIT) {
+//             return onError(`Вы превысили лимит ${Transaction.LIMIT}`);
+//         }
+//         if (amount > this.balance) {
+//             return onError(`Вы превысили баланс ${this.balance}`);
 //         }
 //         this.balance -= amount;
 //         const transaction = this.createTransaction(amount, Transaction.WITHDRAW);
 //         this.transactions.push(transaction);
-//         return `${amount} euro withdrawed, your balance is ${this.balance}`;
+//         return onSuccess(`${amount} евро снято, ваш баланс ${this.balance}`);
 //     },
 //     getBalance() {
 //         return this.balance;
@@ -760,7 +808,6 @@
 //             }
 //         }
 //         return `There is no such transaction`;
-
 //     },
 //     getTransactionTotal(type) {
 //         let total = 0;
@@ -773,15 +820,32 @@
 //      },
 // };
 
-// console.log(account.deposit(120));
-// console.log(account.deposit(80));
-// console.log(account.deposit(10));
+// function handleSuccess(message) {
+//     return `Все хорошо: ${message}`;
+// }
+
+// function handleError (message) {
+//     return `Ошибка: ${message}`;
+// }
+
+
+// console.log(account.deposit(800));
+// console.log(account.deposit(100));
 // console.log(account.withdraw(300));
 // console.log(account.withdraw(30));
 // console.log(account.getTransactionDetails(2));
 // console.log(account.getBalance());
 // console.log(account.getTransactionTotal(Transaction.DEPOSIT));
 // console.log(account);
+
+// console.log(account.deposit(9000, handleSuccess, handleError));
+// console.log(account.deposit(500, handleSuccess, handleError));
+// console.log(account.deposit(0, handleSuccess, handleError));
+// console.log(account.deposit(22000, handleSuccess, handleError));
+// console.log(account.withdraw(500, handleSuccess, handleError));
+// console.log(account.withdraw(9500, handleSuccess, handleError));
+// console.log(account.withdraw(11000, handleSuccess, handleError));
+
 
 // Задача сравнить 2 массива
 // const numbers1 = [1, 2, 3, 4, 5];
@@ -920,18 +984,56 @@
 // const LOW_SCORE = 50;
 // const HIGH_SCORE = 80;
 const students = [
-    { name: "Манго", courses: ["українська", "математика", "фізика"], score: 83, },
-    { name: "Аякс", courses: ["українська", "математика", "інформатика"], score: 37 },
-    { name: "Полі", courses: ["українська", "інформатика", "фізика"], score: 59, },
-    { name: "Ківі", courses: ["українська", "фізика", "біологія"], score: 94, },
-    { name: "Хьюстон", courses: ["українська", "математика", "біологія"], score: 64 },
+    { name: "Манго", coursesNum: 1, courses: ["українська", "математика", "фізика"], score: 83, },
+    { name: "Аякс", coursesNum: 2, courses: ["українська", "математика", "інформатика"], score: 37 },
+    { name: "Полі", coursesNum: 3, courses: ["українська", "інформатика", "фізика"], score: 59, },
+    { name: "Ківі", coursesNum: 4, courses: ["українська", "фізика", "біологія"], score: 94, },
+    { name: "Хьюстон", coursesNum: 5, courses: ["українська", "математика", "біологія"], score: 64 },
 ];
 
+students.forEach((student, index) => console.log(`${index+1} - ${student.name}- ${student.courses}`));
+students.forEach(student => student.score += 10);
+console.log(students);
 // const studentsCourses = students.forEach(student => console.log(student.courses));
-// console.log(studentsCourses);
+// console.log(studentsCourses); // undefined потому что форич ничего не возвращает, мутирует исходный массив или просто перебирает его
+
+// // или с исп. функции:
+// const print = element => console.log(element.courses);
+// const studentCourses = students.forEach(print);
 
 // const mapOfCourses = students.map(student => student.courses);
 // console.log(mapOfCourses);
+
+// Вернуть только имена и баллы в объекте c деструктуризацией:
+// const studentsScores = students.map(({ name, score }) => ({
+//     name,
+//     score,
+// }));
+// console.table(studentsScores);
+
+// Увеличить всем баллы на 15%
+// const multScores = students.map(student =>
+//     // { return {
+//     //     name: student.name,
+//     //     score: student.score * 1.15,
+//     // }
+//     // или если все св-ва нужно сохранить:
+//             ({...student,
+//     score: student.score * 1.15,
+// }));
+// console.table(multScores);
+
+// Увеличить баллы у 1 студента по имени:
+// const studentToUpdate = "Ківі";
+// const updatedStudents = students.map(student =>
+//     studentToUpdate === student.name ?
+//         {
+//             ...student,
+//             score: student.score * 1.15,
+//         }
+//         : student
+// );
+// console.table(updatedStudents);
 
 // // Задача. Разгладить массив с массивами до 1 уровня
 // const allCourses = students.flatMap(student => student.courses);
@@ -958,6 +1060,11 @@ const students = [
 // // const bestStudentIndex = students.findIndex(student => student.score === maxScore);
 // // console.log(students[bestStudentIndex]);
 
+// Функция найти студента с баллом:
+// const findStudent = (allStudents, scoreToFind) =>
+//     allStudents.find(({score}) => score === scoreToFind);
+// console.log(findStudent(students, 37));
+
 // // Проверить, есть ли студенты, которые учат мат, био, укр и все ли студенты учат их
 // const mathStudents = students.every(student => student.courses.includes('математика'));
 // console.log(`Всі студенти вчать математику: ${mathStudents}`);
@@ -976,7 +1083,7 @@ const students = [
 // const descendingScore = students.sort((firstStudent, secondStudent) => secondStudent.score - firstStudent.score);
 // console.table(descendingScore);
 // const studentsSortedByName = students.sort((firstStudent, secondStudent) => firstStudent.name.localeCompare(secondStudent.name));
-// console.table(studentsSortedByName);
+// console.table(studentsSortedBy Name);
 
 // // Получить массив имен, отсортированный по возрастанию баллов
 // const namesByScore = [...students]
@@ -990,39 +1097,68 @@ const students = [
 //     .sort((a, b) => a.localeCompare(b));
 // console.table(coursesByAscending);
 
+//  
+
+
 // Посчитать общее количество тегов всех твитов
-// const tweets = [
-//   { id: "000", likes: 5, tags: ["js", "nodejs"] },
-//   { id: "001", likes: 2, tags: ["html", "css"] },
-//   { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
-//   { id: "003", likes: 8, tags: ["css", "react"] },
-//   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
-// ];
+const tweets = [
+  { id: "000", likes: 5, tags: ["js", "nodejs"] },
+  { id: "001", likes: 2, tags: ["html", "css"] },
+  { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+  { id: "003", likes: 8, tags: ["css", "react"] },
+  { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+];
+
+//  // const getTags = tweets =>
+//  //  tweets.reduce(function (acc, tweet) {
+//  //    acc.push(...tweet.tags);
+//  //    return acc;
+//  //  }, []);
+//  // так мутирует аргумент acc в исходном параметре.
+//  // Чтобы этого не было:
 // const getTags = tweets =>
-//   tweets.reduce(function (allTags, tweet) {
-//     allTags.push(...tweet.tags);
-//     return allTags;
-//   }, []);
-// const tags = getTags(tweets);
-// console.log(tags);
+//     tweets.reduce((acc, tweet) => [...acc, ...tweet.tags], []);
+// или
+//     tweets.flatMap(tweet => tweet.tags);
+// const allTags = getTags(tweets);
+// console.log(allTags);
+
 // // Винесемо callback-функцію окремо, а в reducе передамо посилання на неї.
 // // Це стандартна практика, якщо callback-функція досить велика.
 // // Якщо в об'єкті-акумуляторі acc відсутня своя властивість з ключем tag,
 // // то створюємо її і записуємо їй значення 0.
 // // В іншому випадку збільшуємо значення на 1.
-// const getTagStats = (acc, tag) => {
-//   if (!acc.hasOwnProperty(tag)) {
-//     acc[tag] = 0;
-//     // console.log(acc);
-//   }
-//   acc[tag] += 1;
-//   // console.log(acc);
-//   return acc;
-// };
 // // Початкове значення акумулятора - це порожній об'єкт {}
-// const countTags = tags => tags.reduce(getTagStats, {});
-// const tagCount = countTags(tags);
-// console.log(tagCount);
+
+// const getTagStats = allTags => allTags.reduce(
+//     (acc, tag) =>
+//     //   {if (acc[tag]) {  // или acc.hasOwnProperty(tag)) {
+//     //       return {
+//     //           ...acc,
+//     //           [tag]: acc[tag] + 1,
+//     //       };
+//     //     };
+//     //     return {
+//     //         ...acc,
+//     //         [tag]: 1,
+//     //       };
+    
+//     // или коротко c тернарником:
+//     ({
+//         ...acc,
+//         [tag]: acc[tag] ? acc[tag] + 1 : 1,
+//     }),
+//     {});
+// console.log(getTagStats(allTags));
+
+// // Самый короткий:
+// const allTags = tweets.flatMap(tweet => tweet.tags).reduce(
+//     (acc, tag) => ({
+//         ...acc,
+//         [tag]: acc[tag] ? acc[tag] + 1 : 1,
+//     }),
+//     {});
+// console.log(allTags);
 
 // --------------------------------------------
 // КОЛЛБЭКИ
@@ -1041,7 +1177,22 @@ const students = [
 // doMath(3, 5, add);
 // doMath(13, 8, sub);
 
-// // Н аписать универсальный код фильтрации массива
+// // То же самое, но с массивом:
+// const doMath = (array, cb) => {
+//     const newArr = [];
+//     for (let element of array) {
+//         newArr.push(cb(element));
+//     };
+//     return newArr;
+// };
+// const mult2x = value => value * 2;
+// const add10 = value => value + 10;
+// console.log(doMath([1,3,5,13,57], mult2x));
+// console.log(doMath([1, 3, 5, 13, 57], add10));
+// console.log(doMath([1,3,5,13,57], value => value - 1));
+
+
+// // Написать универсальный код фильтрации массива
 // const filter = function (arr, testNumber, test) {
 //     const filteredArr = [];
 //     for (const el of arr) {
@@ -1103,7 +1254,7 @@ const students = [
 //             return `Current salary of ${name} is ${salary}`;
 //         },
 //     };
-// }
+// } 
 // const bob = salaryManager('Bob', 5000);
 // console.log(bob.current());
 // bob.lower(50);
