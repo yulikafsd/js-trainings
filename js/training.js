@@ -1,3 +1,5 @@
+import humans from './products.js';
+
 // Фон страницы меняет цвет рандомно
 // const colors = ['teal', 'pink', 'grey', 'yellow', 'skyblue', 'red', 'orange'];
 // const max = colors.length - 1;
@@ -7,13 +9,11 @@
 // console.log(color);
 // document.body.style.backgroundColor = color;
 
-
 // Сравнение строк - сравниваются посимвольно 1ый с 1ым, если равны, то 2ой с 2ым...
 // console.log('Bob' > 'Alice');
 // console.log('2'>'12');
 // console.log('Bob'.charCodeAt(0));
 // console.log('Alice'.charCodeAt(0));
-
 
 // Возведение в степень по запросу юзера
 // const base = prompt('Введи число');
@@ -22,12 +22,10 @@
 // // console.log(result);
 // const result = alert(`Результат: ${Math.pow(base, power)}`)
 
-
 // Приведение букв к 1 размеру кроме первой
 // let brand = prompt('Введіть бренд');
 // brand = brand[0] + brand.slice(1).toLowerCase();
 // console.log(brand);
-
 
 // Поиск спам-слов
 // const blacklistedWord1 = 'спам';
@@ -36,7 +34,6 @@
 // console.log(subject1.toLocaleLowerCase().includes(blacklistedWord1));
 // console.log(subject2.toLocaleLowerCase().includes(blacklistedWord1));
 
-
 // Открыть чат, если друг онлайн, если он друг и без режима "Не беспокоить"
 // const isOnline = true;
 // const isFriend = true;
@@ -44,16 +41,13 @@
 // const canOpenChat = isOnline && isFriend && !isDnd;
 // console.log('Можно открыть чат?', canOpenChat);
 
-
 // Доступ к коненту в зависимости от подписки
 // const sub = 'vip';
 // const canAccessContent = sub === 'pro' || sub === 'vip';
 // console.log('Есть доступ к контенту?', canAccessContent);
 
-
 // Запрос пин-кода в банкомате - использовать do-while:
 // сначала запрос пин-кода, потом проверка и повтор каждый раз, пока вводится неправильный пароль
-
 
 // Задача1: разрешить или запретить транзакцию в зависимости от наличия доступных средств
 // let balance = 10000;
@@ -66,7 +60,6 @@
 //     message = alert(`На счету недостаточно средств для проведения операции!`);
 // };
 // const finalMessage = alert('Операция завершена');
-
 
 // Задача 2: высчитать скидку в зависимости от потраченной суммы и посчитать сумму покупки со скидкой
 // let totalSpent = 3000;
@@ -89,7 +82,6 @@
 // totalSpent += discountedPayment;
 // const orderMessage = alert(`Оформляем заказ на сумму ${discountedPayment} со скидкой ${discount*100}%`)
 
-
 // Задача 3: посчитать сумму зп работников, если зп каждого - рандомная
 // const minSalary = 500;
 // const maxSalary = 5000;
@@ -103,7 +95,6 @@
 // }
 // console.log('Сумма зарплат:', Number(totalSalary.toFixed(2)));
 
-
 // Задача 4: посчитать сумму всех четных и нечетных чисел в диапазоне от мин и до макс
 // const min = 0;
 // const max = 10;
@@ -116,7 +107,6 @@
 //         total += i;
 // }
 // console.log('Общая сумма', total);
-
 
 // Задача 5: прибавлять значение при клике по кнопке
 // const addBtn = document.querySelector('button[data-add]');
@@ -133,7 +123,6 @@
 //     total = 0;
 //     outputEl.textContent = total;
 // })
-
 
 // // Работа с циклом for
 // // объявление переменной до цикла, чтобы иметь к ней доступ после цикла
@@ -155,7 +144,6 @@
 // }
 // console.log(num);
 
-
 // Прерывание родительского цикла при выполнении условия в дочернем (метка)
 // firstFor: for (let num = 0; num < 4; num++) {
 //     console.log("Num=",num);
@@ -166,7 +154,6 @@
 //     }
 // }
 
-
 // Задача: вывести все числа от мин до макс, если они кратны 5
 // const min = 10;
 // const max = 50;
@@ -176,7 +163,6 @@
 //     }
 //     console.log(i);
 // }
-
 
 // Задача: посчитать сумму всех чисел от 0 до 1000 кратных 3 и 5
 // const max = 1000;
@@ -191,7 +177,6 @@
 // }
 // console.log("Общая сумма: ", sum);
 
-
 // Задача: проверка пользователя:
 // const loginInput = prompt('Введите логин').toLowerCase();
 // const pass = "Я админ";
@@ -204,12 +189,11 @@
 //     alert('Я вас не знаю!');
 // }
 
-
 // Задача: высчитать ИМТ, если значения написаны через , и парсфлоат не подходит
 // const calculateBmi = function (obj) {
 //     const values = Object.values(obj);
 //     const keys = Object.keys(obj);
-    
+
 //     for (let value of values) {
 //         if (value.includes(',')) {
 //             for (let key of keys) {
@@ -253,7 +237,6 @@
 // // отсрочка начала выполнения функции
 // setTimeout(showNumber, 1000, 1);
 
-
 // Вызов нескольких функций одной функцией:
 // function createMessage(text, name) {
 //     return `${text}, ${name}!`;
@@ -266,13 +249,11 @@
 // }
 // initMessage('Привет', 'Вася');
 
-
 // // Перебор FOR OF - вывод в консоль каждой буквы строки
 // const string = "javascript";
 // for (const character of string) {
 //     console.log(character);
 // }
-
 
 // Добавление элементов в массив
 // const colors = ['blue', 'red', 'green'];
@@ -280,14 +261,12 @@
 // console.log(colors);
 // console.log(newColors);
 
-
 // Изменение значения каждого элемента массива:
 // const friends = ['Mango', 'Kiwi', 'Poly', 'Ajax', 'Julia'];
 // for (let i = 0; i < friends.length; i += 1) {
 //     friends[i] += "-friend";
 // }
 // console.table(friends);
-
 
 // Задача. Поиск имени в массиве имен
 // const familyMembers = ["Ira", "Julia", "Nastia", "Darinka", "Kuzia", "Bars"];
@@ -303,13 +282,11 @@
 // message = familyMembers.includes(memberToFind) ? "Member was not found :(" : "Member was found!"
 // console.log(message);
 
-
 // Преобразовать прошлую задачу в функцию (раскомм. стр. 264,265)
 // const findMember = function (members, memberToFind) {
 //     return members.includes(memberToFind) ? "Member was found!" : "Member was not found :(";
 // }
 // console.log(findMember(familyMembers, memberToFind));
-
 
 // Найти самое меньшее число в массиве
 // const numbers = [51, 4, 18, 29, 1, 6, 13];
@@ -320,7 +297,6 @@
 //     };
 // }
 // console.log(smallestNumber);
-
 
 // Переписать на функцию (раском. стр. 287)
 // const findSmallestNumber = function (numbersArr) {
@@ -334,7 +310,6 @@
 // }
 // console.log(findSmallestNumber(numbers));
 
-
 // Инвертировать верхний и нижний регистр
 // const string = 'JavaScript';
 // const letters = string.split('');
@@ -343,7 +318,6 @@
 //     invertedString += letter === letter.toLowerCase() ? letter.toUpperCase() : letter.toLowerCase();
 // }
 // console.log(invertedString);
-
 
 // Переписать на функцию (раском. стр. 310):
 // const invertCase = function (string) {
@@ -359,20 +333,17 @@
 // console.log(invertCase("qweRtY"));
 // console.log(invertCase("AJAX"));
 
-
 // Функция преобразования строки в слаг-строку:
 // const slugify = function (string) {
 //     return string.toLowerCase().split(" ").join("-");
 // }
 // console.log(slugify("London is the capital of GB"));
 
-
 // Создание массива из аргументов
 // const fn = function (a, b, ...args) {
 //     console.log(a, b, "args: ", args);
 // };
 // fn('Halo', 1, 2, 3);
-
 
 // Найти самое длинное слово
 // function findLongestWord(string) {
@@ -388,7 +359,6 @@
 // }
 // console.log(findLongestWord("Vienna is the capital of Osterreich"));
 
-
 // Работа только с числами! Проверка введенных данных (строка-число):
 // const getRectArea = function (a, b) {
 //     if (isNaN(a) || isNaN(b)) {
@@ -403,7 +373,6 @@
 // console.log(getRectArea(1, "5"));
 // console.log(getRectArea(1, 5));
 
-
 // Создать массив целых чисел от мин до макс
 // function createArrayOfNumbers(min, max) {
 //   const numbers = [];
@@ -413,7 +382,6 @@
 //   return numbers;
 // }
 // console.log(createArrayOfNumbers(1, 20));
-
 
 // Отфильтровать все значения больше value
 // function filterArray(numbers, value) {
@@ -427,7 +395,6 @@
 // }
 // console.log(filterArray([12, 24, 8, 41, 76], 38));
 
-
 // Найти общие (повторяющиеся) элементы 2 массивов:
 // function getCommonElements(array1, array2) {
 // const commonArray = [];
@@ -439,7 +406,6 @@
 //   return commonArray;
 // }
 // console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
-
 
 // Вернуть четные числа от мин до макс
 // function getEvenNumbers(start, end) {
@@ -453,7 +419,6 @@
 //   return array;
 //   }
 // console.log(getEvenNumbers(3, 10));
-
 
 // Проверить, содержит ли массив value
 // function includes(array, value) {
@@ -469,7 +434,6 @@
 // includes(['Earth', 'Mars', 'Venus', 'Jupiter', 'Saturn'], 'Jupiter');
 // includes([1, 2, 3, 4, 5], 3);
 // includes([1, 2, 3, 4, 5], 17);
-
 
 // Отфильтровать повторяющиеся числа в массиве и в списке произвольных чисел:
 // const filterNumbers = function (array, ...args) {
@@ -489,10 +453,8 @@
 // }
 // console.log(filterNumbers([1, 2, 3, 4, 5], 1, 2, 3, 9, 12, 17));
 
-
 // Расставить по алфавиту слова в массиве
 // const words = ["Julia", "Nastia", "Darinka", "Ira", "Kuzia", "Bars"];
-
 
 // Форматировать минуты в часы:минуты
 // const formatTime = function (minute) {
@@ -505,7 +467,6 @@
 // console.log(formatTime(50));
 // console.log(formatTime(185));
 // console.log(formatTime(1441));
-
 
 // Каждому имени из строки 1 должен соответствовать телефон из строки 2
 // const names = "Julia,Nastia,Darinka,Ira,Bars,Lili,Hofer";
@@ -544,7 +505,6 @@
 // const stringArr = string.split(" ");
 // const finalString = stringArr.slice(1, stringArr.length-1).join(" ");
 // console.log(finalString);
-
 
 // ---------------------------------------------------
 // ОБЪЕКТЫ
@@ -607,7 +567,6 @@
 // }
 // console.log(findFriendByName(friends, 'London'));
 
-
 // 2. Получить имена всех друзей
 // const getAllNames = function (allFriends) {
 //     const namesArr = [];
@@ -621,7 +580,6 @@
 // // и с помощью метода перебора массивов
 // const getAllNames = allFriends => allFriends.map(friend => friend.name);
 // console.log(getAllNames(friends));
-
 
 // 3. Получить имена друзей, которые оффлайн
 // const getOfflineNames = function (allFriends) {
@@ -639,31 +597,29 @@
 // const friendsOffline = friends.filter(friend => !friend.online).map(friend => friend.name);
 // console.log(friendsOffline);
 
-
 // 4. Получить имена друзей онлайн и офлайн отдельно
 // const getFriendsByStatus = function (allFriends) {
-    //     const friendsByStatus = {
-        //         online: [],
-        //         offline: [],
-        //     };
-        //     for (const friend of allFriends) {
-            //         !friend.online ? friendsByStatus.offline.push(friend.name) : friendsByStatus.online.push(friend.name);
-            //         // или
-            //         // const key = friend.online ? 'online' : 'offline';
-            //         // friendByStatus[key].push(friend);
-            //     }
-            //         return friendsByStatus;
-            //     }
-            // console.log(getFriendsByStatus(friends));
-            
+//     const friendsByStatus = {
+//         online: [],
+//         offline: [],
+//     };
+//     for (const friend of allFriends) {
+//         !friend.online ? friendsByStatus.offline.push(friend.name) : friendsByStatus.online.push(friend.name);
+//         // или
+//         // const key = friend.online ? 'online' : 'offline';
+//         // friendByStatus[key].push(friend);
+//     }
+//         return friendsByStatus;
+//     }
+// console.log(getFriendsByStatus(friends));
+
 // // и с помощью метода перебора массивов
 // const friendsOnline = friends.filter(friend => friend.online);
 // console.log(friendsOnline);
 // const friendsOffline = friends.filter(friend => !friend.online);
 // console.log(friendsOffline);
 
-            
-            // Создать корзину товаров
+// Создать корзину товаров
 // const cart = {
 //     items: [],
 //     getItems() {
@@ -740,7 +696,6 @@
 // console.log(cart.countTotalPrice());
 // console.log(cart.remove('banana'));
 // console.log(cart.clear());
-
 
 // Создать банкомат
 // const Transaction = {
@@ -828,7 +783,6 @@
 //     return `Ошибка: ${message}`;
 // }
 
-
 // console.log(account.deposit(800));
 // console.log(account.deposit(100));
 // console.log(account.withdraw(300));
@@ -845,7 +799,6 @@
 // console.log(account.withdraw(500, handleSuccess, handleError));
 // console.log(account.withdraw(9500, handleSuccess, handleError));
 // console.log(account.withdraw(11000, handleSuccess, handleError));
-
 
 // Задача сравнить 2 массива
 // const numbers1 = [1, 2, 3, 4, 5];
@@ -888,7 +841,6 @@
 //     online: true,
 // };
 
-
 // const mango = {
 //     firstName: 'Mango',
 //     lastName: 'Chocolate',
@@ -905,7 +857,6 @@
 //     return id;
 // }
 
-
 // Задача. Вернуть объект контакта со свойством полное имя:
 // function transformName({ firstName, lastName, ...props }) {
 //     return {
@@ -915,7 +866,6 @@
 // };
 // console.table(transformName(mango));
 // console.table(transformName(poly));
-
 
 // Задача с зельями - potions
 // const atTheOldToad = {
@@ -977,23 +927,22 @@
 // }
 // countTotalSalary({ mango: 100, poly: 150, alfred: 80 });
 
-
 // ------------------------------------------
-// Перебирающие методы массивов
+// ПЕРЕБИРАЮЩИЕ МЕТОДЫ МАССИВОВ
 
 // const LOW_SCORE = 50;
 // const HIGH_SCORE = 80;
-const students = [
-    { name: "Манго", coursesNum: 1, courses: ["українська", "математика", "фізика"], score: 83, },
-    { name: "Аякс", coursesNum: 2, courses: ["українська", "математика", "інформатика"], score: 37 },
-    { name: "Полі", coursesNum: 3, courses: ["українська", "інформатика", "фізика"], score: 59, },
-    { name: "Ківі", coursesNum: 4, courses: ["українська", "фізика", "біологія"], score: 94, },
-    { name: "Хьюстон", coursesNum: 5, courses: ["українська", "математика", "біологія"], score: 64 },
-];
+// const students = [
+//     { name: "Манго", coursesNum: 1, courses: ["українська", "математика", "фізика"], score: 83, },
+//     { name: "Аякс", coursesNum: 2, courses: ["українська", "математика", "інформатика"], score: 37 },
+//     { name: "Полі", coursesNum: 3, courses: ["українська", "інформатика", "фізика"], score: 59, },
+//     { name: "Ківі", coursesNum: 4, courses: ["українська", "фізика", "біологія"], score: 94, },
+//     { name: "Хьюстон", coursesNum: 5, courses: ["українська", "математика", "біологія"], score: 64 },
+// ];
 
-students.forEach((student, index) => console.log(`${index+1} - ${student.name}- ${student.courses}`));
-students.forEach(student => student.score += 10);
-console.log(students);
+// students.forEach((student, index) => console.log(`${index+1} - ${student.name}- ${student.courses}`));
+// students.forEach(student => student.score += 10);
+// console.log(students);
 // const studentsCourses = students.forEach(student => console.log(student.courses));
 // console.log(studentsCourses); // undefined потому что форич ничего не возвращает, мутирует исходный массив или просто перебирает его
 
@@ -1097,17 +1046,14 @@ console.log(students);
 //     .sort((a, b) => a.localeCompare(b));
 // console.table(coursesByAscending);
 
-//  
-
-
 // Посчитать общее количество тегов всех твитов
-const tweets = [
-  { id: "000", likes: 5, tags: ["js", "nodejs"] },
-  { id: "001", likes: 2, tags: ["html", "css"] },
-  { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
-  { id: "003", likes: 8, tags: ["css", "react"] },
-  { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
-];
+// const tweets = [
+//   { id: "000", likes: 5, tags: ["js", "nodejs"] },
+//   { id: "001", likes: 2, tags: ["html", "css"] },
+//   { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+//   { id: "003", likes: 8, tags: ["css", "react"] },
+//   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+// ];
 
 //  // const getTags = tweets =>
 //  //  tweets.reduce(function (acc, tweet) {
@@ -1142,7 +1088,7 @@ const tweets = [
 //     //         ...acc,
 //     //         [tag]: 1,
 //     //       };
-    
+
 //     // или коротко c тернарником:
 //     ({
 //         ...acc,
@@ -1191,7 +1137,6 @@ const tweets = [
 // console.log(doMath([1, 3, 5, 13, 57], add10));
 // console.log(doMath([1,3,5,13,57], value => value - 1));
 
-
 // // Написать универсальный код фильтрации массива
 // const filter = function (arr, testNumber, test) {
 //     const filteredArr = [];
@@ -1218,22 +1163,15 @@ const tweets = [
 // Отфильтровать студентов, чей балл больше 30
 // console.log(filter(students, 60, moreThanScore));
 
-
 // //Замыкание - функция со статичным параметром
 // возвращает функцию с меняющимся свойством, которая
 // имеет доступ к параметрам и переменным первой функции
-// const makeShef = function (name) {
-//     const makeDish = function (dish) {
-//         console.log(`Chef ${name} cooks ${dish}`);
-//     };
-//     return makeDish;
-// };
-// const mango = makeShef('Mango');
+//  mango = makeShef('Mango').makeSoup('пирожок');
+// или отдельными вызовами:
 // const poly = makeShef('Poly');
-// mango('pancakes');
-// poly('steak');
+// poly.makeSoup('borsch');
 
-// При замыкании переменную первой функции 
+// При замыкании переменную первой функции
 // можно изменить только с помощью методов
 // const salaryManager = function (name, baseSalary = 0) {
 //     let salary = baseSalary;
@@ -1254,11 +1192,371 @@ const tweets = [
 //             return `Current salary of ${name} is ${salary}`;
 //         },
 //     };
-// } 
+// }
 // const bob = salaryManager('Bob', 5000);
 // console.log(bob.current());
 // bob.lower(50);
 // console.log(bob.current());
 // bob.raise(1000);
 // console.log(bob.current());
+//
+//
+// ----------------------------------------------
+// THIS, CALLBACK, BIND
 
+// // Посчитать функцией общую стоимость каждого объекта в массиве в объекте
+// const chopShop = {
+//   stones: [
+//     { name: 'Emerald', price: 1300, quantity: 4 },
+//     { name: 'Diamond', price: 2700, quantity: 3 },
+//     { name: 'Sapphire', price: 1400, quantity: 7 },
+//     { name: 'Ruby', price: 800, quantity: 2 },
+//   ],
+
+//   calcTotalPrice(stoneName) {
+//     const { price, quantity } = this.stones.find(
+//       stone => stone.name === stoneName,
+//     );
+//     return price * quantity;
+//   },
+// };
+
+// console.log(chopShop.calcTotalPrice('Emerald'));
+// console.log(chopShop.calcTotalPrice('Diamond'));
+// console.log(chopShop.calcTotalPrice('Sapphire'));
+// console.log(chopShop.calcTotalPrice('Ruby'));
+
+// // Создать объект-калькулятор, кот. будет принимать 2 числа
+// const calc = {
+//   read(a, b) {
+//     this.a = a;
+//     this.b = b;
+//   },
+//   add() {
+//     return this.a + this.b;
+//   },
+//   mult() {
+//     return this.a * this.b;
+//   },
+// };
+// calc.read(4, 9);
+// console.log(calc.mult());
+// console.log(calc.add());
+
+// const students = [
+//   {
+//     name: 'Манго',
+//     coursesNum: 1,
+//     courses: ['українська', 'математика', 'фізика'],
+//     score: 83,
+//   },
+//   {
+//     name: 'Аякс',
+//     coursesNum: 2,
+//     courses: ['українська', 'математика', 'інформатика'],
+//     score: 37,
+//   },
+//   {
+//     name: 'Полі',
+//     coursesNum: 3,
+//     courses: ['українська', 'інформатика', 'фізика'],
+//     score: 59,
+//   },
+//   {
+//     name: 'Ківі',
+//     coursesNum: 4,
+//     courses: ['українська', 'фізика', 'біологія'],
+//     score: 94,
+//   },
+//   {
+//     name: 'Хьюстон',
+//     coursesNum: 5,
+//     courses: ['українська', 'математика', 'біологія'],
+//     score: 64,
+//   },
+// ];
+
+// // Применить к контексту объекта функцию, которая не является его методом
+
+// const mango = {
+//   name: 'Манго',
+//   coursesNum: 1,
+//   courses: ['українська', 'математика', 'фізика'],
+//   score: 83,
+//   getName() {
+//     return `${this.name}`; // этот this сработает
+//   },
+//   getCourses() {
+//     return `${this.courses}`;
+//   },
+// };
+
+// function greeter() {
+//   return console.log(`${this.name}, welcome to hell of ${this.courses}! 🔥`);
+// }
+// const greetStudent = greeter.bind(students[0]);
+// greetStudent();
+// console.dir(greeter);
+// console.dir(greetStudent);
+
+// // Вызвать в колбеке функцию - метод объекта
+// function greet1(cb1, cb2) {
+//   return console.log(`${cb1()}, welcome to hell of ${cb2()}! 🔥`);
+// }
+// greet1(mango.getName.bind(mango), mango.getCourses.bind(mango));
+
+// // Вызвать в кб функцию - метод объекта, сохранив его контекст
+// function greet2(cb) {
+//   return console.log(`${cb()}, welcome to hell of ${this.courses}! 🔥`);
+// }
+
+// const greetMango = greet2.bind(mango); // копия ф. с контекстом привязанным к объекту
+// greetMango(mango.getName.bind(mango)); // вызов ф. с привяз. контекстом и привязывание коллбека в параметре к объекту
+
+// // Привязать внешнюю функцию к объекту
+// function showThis(method, ...args) {
+//   return console.log(`This is ${method}ed fn object:`, this, args);
+// }
+// showThis.call(mango, 'call', 1, 2, 3); //сразу вызывает
+// const bindedfn = showThis.bind(mango); //не вызывает, сохраняет с привязкой к контексту в переменную
+// bindedfn('bind', 5, 6, 7);
+
+// Привязать внешнюю функцию к массиву как метод прототипа класса
+// const numbers = [1, 2, 3, 4, 5, 6];
+// // расширяем прототип массивов на еще 1 функцию:
+// Array.prototype.multBy = function (n) {
+//   return console.log(this.map(num => num * n));
+// };
+// numbers.multBy(10);
+//
+//
+// ----------------------------------------------------
+// КЛАСС, ЕКЗЕМПЛЯР, ПРОТОТИП
+
+// // объявляем класс
+// class Human {
+//   // статичные св-ва класса
+//   static Sexes = {
+//     // статичные приватные св-ва класса
+//     HETERO: 'hetero',
+//     HOMO: 'homo',
+//     BI: 'bi',
+//     TRANS: 'trans',
+//   };
+//   static Genders = {
+//     MALE: 'male',
+//     FEMALE: 'female',
+//   };
+
+//   // публичные св-ва
+//   body;
+//   // приватные св-ва
+//   #sex;
+
+//   // конструктор - как будет создаваться экземпляр
+//   constructor({ body, sex } = {}) {
+//     this.body = body;
+//     this.#sex = sex;
+//   }
+
+//   // метод класса - get
+//   get sex() {
+//     return this.#sex;
+//   }
+
+//   // метод класса - set
+//   set sex(newSex) {
+//     return (this.#sex = newSex);
+//   }
+// }
+
+// // создаем дочерний класс
+// class Male extends Human {
+//   // публичные переменные
+//   posts;
+//   firstName;
+//   // приватные переменные
+//   #gender;
+
+//   constructor({ body, sex, firstName } = {}) {
+//     super({ body, sex });
+//     // под капотом стягивает у род. класса:
+//     //   this.body = body;
+//     //   this.#sex = sex;
+//     this.#gender = Human.Genders.MALE;
+//     this.posts = [];
+//     this.firstName = firstName;
+//   }
+
+//   getGender() {
+//     return this.#gender;
+//   }
+
+//   addPost(newPost) {
+//     return this.posts.push(newPost);
+//   }
+// }
+
+// // создаем экземпляр
+// const peter = new Male({
+//   body: 'strong',
+//   sex: Human.Sexes.HETERO,
+//   firstName: 'Peter',
+// });
+
+// console.log(peter);
+// peter.firstName = 'Mango';
+// console.log(peter);
+
+// console.log(peter.sex);
+// peter.sex = Human.Sexes.HOMO;
+// console.log(peter.sex);
+
+// console.log(peter.posts);
+// peter.addPost('NewPost1');
+// peter.addPost('NewPost2');
+// console.log(peter.posts);
+
+// console.log(peter.gender); // если бы был геттер, этот запрос выполнился бы
+// console.log(peter.getGender());
+// peter.gender = 'they';
+// console.log(peter.getGender()); // не изенился, потому что у приватного св-ва нет сеттера
+
+// // Создать GoogleKeep ))
+// class Notes {
+//   static Priority = {
+//     LOW: 'low',
+//     NORMAL: 'normal',
+//     HIGH: 'high',
+//   };
+//   constructor() {
+//     this.items = [];
+//   }
+
+//   addNote(note) {
+//     this.items.push(note);
+//   }
+
+//   getItems() {
+//     return this.items;
+//   }
+
+//   removeNote(text) {
+//     this.items = this.items.filter(item => item.text !== text);
+//   }
+
+//   changePriority(textToFind, newPriority) {
+//     this.items = this.items.map(item =>
+//       item.text === textToFind ? { ...item, priority: newPriority } : item,
+//     );
+//   }
+// }
+
+// const myNotes = new Notes();
+// console.log(myNotes);
+// myNotes.addNote({ text: 'First note', priority: Notes.Priority.LOW });
+// myNotes.addNote({ text: 'Second note', priority: Notes.Priority.HIGH });
+// console.table(myNotes.getItems());
+// myNotes.removeNote('First note');
+// myNotes.changePriority('Second note', 'low');
+// console.table(myNotes.getItems());
+
+// -------------------------------
+// DOM
+
+// // К задаче 3
+// const inputEl = document.querySelector('[data-value]');
+// // const inputEl = document.querySelector('sum');
+// // const inputEl = document.querySelector('[type="number"]');
+
+// const actions = document.querySelectorAll('button');
+// console.log(actions);
+// console.log(actions[0].dataset.action);
+// console.log(actions[1].dataset.action);
+
+// const addBtnEl = document.querySelector('button[data-action="add"]');
+// const resetBtnEl = document.querySelector('button[data-action="reset"]');
+// const outputEl = document.querySelector('.js-output > span');
+
+// console.log(inputEl);
+// console.log(addBtnEl);
+// console.log(resetBtnEl);
+// console.log(outputEl);
+
+// let sum = 0;
+
+// addBtnEl.addEventListener('click', addNumber);
+// resetBtnEl.addEventListener('click', reset);
+
+// function addNumber() {
+//   sum += Number(inputEl.value);
+//   outputEl.textContent = sum;
+//   inputEl.value = '';
+// }
+
+// function reset() {
+//   sum = 0;
+//   outputEl.textContent = sum;
+// }
+
+// // Создать из массива объектов разметку
+// const colorOptions = [
+//   { label: 'red', color: '#F44336' },
+//   { label: 'blue', color: '#2196f3' },
+//   { label: 'green', color: '#4CAF50' },
+// ];
+
+// const colorPickerHeader = document.createElement('h2');
+// colorPickerHeader.textContent = 'Color Picker!';
+// colorPickerHeader.style.textAlign = 'center';
+
+// const colorContainer = document.createElement('div');
+// colorContainer.style.width = '200px';
+// colorContainer.style.display = 'flex';
+// colorContainer.style.justifyContent = 'space-between';
+// colorContainer.style.margin = 'auto';
+
+// const createColorPicker = optionsArr => {
+//   return optionsArr.map(option => {
+//     const colorBtn = document.createElement('button');
+//     colorBtn.type = 'button';
+//     colorBtn.classList.add('color-picker__option');
+//     colorBtn.textContent = option.label;
+//     colorBtn.style.backgroundColor = option.color;
+//     colorBtn.style.border = 'none';
+//     colorBtn.style.height = '60px';
+//     colorBtn.style.width = '60px';
+
+//     return colorBtn;
+//   });
+// };
+
+// colorContainer.append(...createColorPicker(colorOptions));
+// document.body.append(colorPickerHeader, colorContainer);
+
+// console.log(colorContainer);
+
+// // Создать код по шаблону разметки (раскомментируй 1ю строку)
+// const makeHumanCard = ({ humanName, description, age }) => {
+//   const articleEl = document.createElement('article');
+//   articleEl.classList.add('human');
+
+//   const headerEl = document.createElement('h1');
+//   headerEl.classList.add('human_name');
+//   headerEl.textContent = humanName;
+
+//   const descriptionEl = document.createElement('p');
+//   descriptionEl.classList.add('human_descr');
+//   descriptionEl.textContent = description;
+
+//   const ageEl = document.createElement('p');
+//   ageEl.classList.add('human_age');
+//   ageEl.textContent = `Age: ${age} years`;
+
+//   articleEl.append(headerEl, descriptionEl, ageEl);
+
+//   return articleEl;
+// };
+
+// // console.log(makeHumanCard(humans[1]));
+// document.body.append(...humans.map(makeHumanCard));
