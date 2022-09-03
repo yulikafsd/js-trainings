@@ -1465,38 +1465,50 @@ import humans from './products.js';
 // DOM
 
 // // К задаче 3
-// const inputEl = document.querySelector('[data-value]');
-// // const inputEl = document.querySelector('sum');
-// // const inputEl = document.querySelector('[type="number"]');
 
-// const actions = document.querySelectorAll('button');
-// console.log(actions);
-// console.log(actions[0].dataset.action);
-// console.log(actions[1].dataset.action);
+// const refs = {
+//   inputEl: document.querySelector('[data-value]'),
+//   // const inputEl = document.querySelector('sum');
+//   // const inputEl = document.querySelector('[type="number"]');
+//   actions: document.querySelectorAll('button'),
+//   addBtnEl: document.querySelector('button[data-action="add"]'),
+//   resetBtnEl: document.querySelector('button[data-action="reset"]'),
+//   output: document.querySelector('.js-output > span'),
+//   display: document.querySelector('.js-display'),
+// };
+// console.log(refs.actions[0].dataset.action);
+// console.log(refs.actions[1].dataset.action);
 
-// const addBtnEl = document.querySelector('button[data-action="add"]');
-// const resetBtnEl = document.querySelector('button[data-action="reset"]');
-// const outputEl = document.querySelector('.js-output > span');
+// refs.inputEl.addEventListener('focus', onFocus);
+// refs.inputEl.addEventListener('blur', onBlur);
 
-// console.log(inputEl);
-// console.log(addBtnEl);
-// console.log(resetBtnEl);
-// console.log(outputEl);
+// function onFocus() {
+//   console.log(`Focus`);
+// }
+
+// function onBlur(event) {
+//   console.log(`Blurred on ${event.currentTarget.value}`);
+// }
 
 // let sum = 0;
 
-// addBtnEl.addEventListener('click', addNumber);
-// resetBtnEl.addEventListener('click', reset);
+// refs.addBtnEl.addEventListener('click', addNumber);
+// refs.resetBtnEl.addEventListener('click', reset);
+// refs.inputEl.addEventListener('input', displayNum);
 
 // function addNumber() {
 //   sum += Number(inputEl.value);
-//   outputEl.textContent = sum;
-//   inputEl.value = '';
+//   refs.output.textContent = sum;
+//   refs.inputEl.value = '';
 // }
 
 // function reset() {
 //   sum = 0;
-//   outputEl.textContent = sum;
+//   refs.output.textContent = sum;
+// }
+
+// function displayNum(event) {
+//   refs.display.textContent = event.currentTarget.value; // то же, что и = refs.inputEl.value, но универсальнее
 // }
 
 // // Создать из массива объектов разметку
